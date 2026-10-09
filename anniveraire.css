@@ -1,0 +1,189 @@
+:root {
+      --bg: white;
+      --panel: rgba(0, 2, 3, 0.92);
+     --white: #f7eec1;
+    --green: #68e9a6;
+    }
+    * { box-sizing: border-box; 
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Fira Code", sans-serif;
+    }
+    html { min-height: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 24px 14px;
+      overflow-x: hidden;
+      color: var(--white);
+      background-image: url("WhatsApp Image 2026-10-09 at 21.03.31.jpeg");
+        
+      background-position: center;
+        background-attachment: fixed;
+
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image: linear-gradient(rgba(94,231,255,.12) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(94,231,255,.12) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+
+    .shell {
+      position: relative;
+      width: min(100%, 870px);
+      border: 1px solid rgba(94, 231, 255, .35);
+      border-radius: 18px;
+      overflow: hidden;
+      background:black;
+      box-shadow: 0 0 55px rgba(34, 211, 238, .11), 0 25px 90px rgba(0,0,0,.38);
+      animation: boot-in .8s ease-out both;
+    }
+    .titlebar {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgb(142, 141, 141);
+      background:rgb(67, 65, 65);
+    }
+    .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+    .red { background: #f89ba1; }
+    .yellow { background: #ffd166; }
+    .green-dot { background: #68e9a6; }
+    .window-title { margin-left: auto; color: #8192ad; font-size: 12px; }
+    .terminal { padding: clamp(18px, 4vw, 34px); }
+    .prompt { color: var(--green); }
+    .muted { color: var(--muted); }
+    #typing {
+      min-height: 172px;
+      margin: 0;
+      color: white;
+      font-size: clamp(12px, 2.1vw, 15px);
+      line-height: 1.9;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1.1em;
+      margin-left: 3px;
+      vertical-align: -3px;
+      background: var(--cyan);
+      animation: blink .8s steps(2, start) infinite;
+    }
+    .celebration {
+      display: none;
+      padding: 0 clamp(18px, 4vw, 34px) 32px;
+      text-align: center;
+      animation: rise .9s ease both;
+    }
+    .celebration.visible { display: block; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 11px;
+    }
+    h1 {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Fira Code", sans-serif;
+     
+      font-size: clamp(30px, 7vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+     /* text-shadow: 0 0 28px rgba(94,231,255,.32);**/
+    }
+    h1 span {
+      display: block;
+      margin-top: 8px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Fira Code", sans-serif;
+      color: var(--cyan);
+    }
+    .cake {
+      margin: 18px 0 10px;
+      font-family: system-ui, "Fira Code", sans-serif;
+      font-size: clamp(60px, 13vw, 92px);
+      /*filter: drop-shadow(0 0 22px rgba(251,191,36,.25));*/
+      animation: cake-bob 2.2s ease-in-out infinite;
+    }
+    .message {
+      max-width: 590px;
+      margin: 0 auto;
+      color: #c4d2e8;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Fira Code", sans-serif;
+      font-size: clamp(14px, 2.5vw, 17px);
+      line-height: 1.8;
+    }
+    .message strong { color: #fff0a6; }
+    .quote {
+      margin: 20px auto 0;
+      max-width: 560px;
+      padding: 13px 16px;
+      border-left: 2px solid var(--purple);
+      border-radius: 0 10px 10px 0;
+      background: rgba(227, 226, 227, 0.08);
+      color: #ddccff;
+      text-align: left;
+      font-size: clamp(12px, 2.2vw, 14px);
+      line-height: 1.8;
+    }
+    .actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    button {
+      min-height: 44px;
+      padding: 12px 17px;
+      background: var(--cyan);
+     color: var(--panel);
+      border-radius: 10px;
+     
+      color: var(--white);
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform .2s, background .2s, border-color .2s;
+    }
+    button:hover { transform: translateY(-1px); }
+    button:active { transform: translateY(1px); }
+    .footer {
+      padding: 0 16px 20px;
+      color: #f37304;
+      text-align: center;
+      font-size: 19px;
+    }
+    .confetti {
+      position: fixed;
+      z-index: 10;
+      top: -16px;
+      width: 8px;
+      height: 13px;
+      pointer-events: none;
+      animation: confetti-fall var(--duration, 4s) linear forwards;
+    }
+    .status { margin-top: 18px; color: #d5d6d7; font-size: 11px; }
+    .status b { color: var(--green); font-weight: 500; }
+    @keyframes blink { to { visibility: hidden; } }
+    @keyframes boot-in { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes cake-bob { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-8px) rotate(2deg); } }
+    @keyframes confetti-fall { to { transform: translate3d(var(--drift, 30px), 110vh, 0) rotate(760deg); opacity: .15; } }
+    @media (max-width: 480px) {
+      body { padding: 12px 9px; }
+      .titlebar { min-height: 42px; padding: 10px 12px; }
+      #typing { min-height: 190px; line-height: 1.75; }
+      .celebration { padding-bottom: 24px; }
+      .window-title { font-size: 10px; }
+      button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+    }

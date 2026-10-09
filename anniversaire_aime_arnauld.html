@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070b17">
+  <link rel="stylesheet" href="anniveraire.css">
+  <title>Joyeux anniversaire, Aimé Arnauld !</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <main class="shell" aria-label="Carte d'anniversaire de développeur">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green-dot"></span>
+      <span class="window-title" style="color: #689ff8; font-size: 12px;">aimearnauld@dev: ~/birthday.sh</span>
+    </div>
+
+    <section class="terminal" aria-label="Terminal animé">
+      <div class="muted" style="margin-bottom:12px;font-size:15px;">Bienvenue dans le terminal de célébration  🐦‍🔥</div>
+      <div><span class="prompt">aimearnauld@dev</span><span class="muted">:~$ </span><span style="color:var(--cyan)">./lancer-anniversaire.sh</span></div>
+      <pre id="typing" aria-live="polite"></pre><span class="cursor" id="cursor"></span>
+      <div class="status">STATUS: <b id="status">initialisation...</b></div>
+    </section>
+
+    <section class="celebration" id="celebration" aria-live="polite">
+     
+      
+      <h1>Joyeux anniversaire,<span>Aimé Arnauld ! 🎉</span></h1>
+      <div class="cake" aria-hidden="true">🎂</div>
+      <p class="message">
+        Aujourd’hui, je célèbre <strong>ma vie, mon parcours et mes rêves.</strong><br>
+        Une nouvelle page s’ouvre : de nouvelles idées à transformer en projets,
+        des défis à relever et des compétences à faire grandir.
+      </p>
+      <div class="quote">
+        <span class="prompt">const avenir =</span> "Je continue d'apprendre, de créer et de ne jamais abandonner";<br>
+        <span class="prompt">console.log(avenir);</span><br>
+        <span style="color:#f7eec1">→ Le meilleur reste à coder.</span>
+      </div>
+      <div class="actions">
+        <button id="celebrateBtn" type="button"> Relancer les confettis</button>
+        <button id="replayBtn" type="button">Animer</button>
+      </div>
+    </section>
+    <div class="footer">Made with &lt;code&gt; par Aimé Arnauld</div>
+  </main>
+
+  <script src="aniversaire.js"></script>
+
+  
+</body>
+</html>
